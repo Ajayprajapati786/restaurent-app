@@ -1,11 +1,15 @@
-import './Header.css'
-
-const Header =()=>{
+import mealsImage from '../../assets/meals.jpg'
+import classes from './Header.module.css'
+import HeaderCartButton from './HeaderCartButton'
+const Header =(props)=>{
     return (
         <>
-        <div className='mainHeader'>
-            <h1 className='title'>ReactMeals</h1>
-            <h3 className='cart'>Your Cart <span> 0 </span></h3>
+        <header className={classes.header}>
+            <h1>ReactMeals</h1>
+           <HeaderCartButton/>
+        </header>
+        <div className={classes['main-image']}>
+            <img src={mealsImage} alt='A table full of delicious food'/>
         </div>
         </>
     )
