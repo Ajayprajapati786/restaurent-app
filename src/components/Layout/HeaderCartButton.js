@@ -5,21 +5,8 @@ import { useState } from "react";
 
 const HeaderCartButton = props =>{
 
-    const[isShow,setIsShow] = useState(false);
-    const cartshow =()=>{
-        setIsShow(!isShow);
-        // console.log(isShow);
-    }
-
-    const handleClick =()=>{
-        props.onMessage(isShow);
-    }
-    const runBoth =()=>{
-        cartshow();
-        handleClick();
-    }
     
-    return <button className={classes.button} onClick={runBoth}>
+    return <button className={classes.button} >
         <span className={classes.icon}>
             <CartIcon/>
         </span>
