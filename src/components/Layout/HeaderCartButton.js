@@ -6,7 +6,7 @@ import { useState } from "react";
 const HeaderCartButton = props =>{
 
     
-    return <button className={classes.button} >
+    return <button className={classes.button} onClick={props.onClick} >
         <span className={classes.icon}>
             <CartIcon/>
         </span>
