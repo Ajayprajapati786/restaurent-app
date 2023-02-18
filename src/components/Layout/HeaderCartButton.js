@@ -1,9 +1,25 @@
-import Header from "./Header";
 import CartIcon from "../Cart/CartIcon";
 import classes from './HeaderCartButton.module.css'
+import { useState } from "react";
+
 
 const HeaderCartButton = props =>{
-    return <button className={classes.button}>
+
+    const[isShow,setIsShow] = useState(false);
+    const cartshow =()=>{
+        setIsShow(!isShow);
+        // console.log(isShow);
+    }
+
+    const handleClick =()=>{
+        props.onMessage(isShow);
+    }
+    const runBoth =()=>{
+        cartshow();
+        handleClick();
+    }
+    
+    return <button className={classes.button} onClick={runBoth}>
         <span className={classes.icon}>
             <CartIcon/>
         </span>
@@ -12,6 +28,7 @@ const HeaderCartButton = props =>{
             3
         </span>
     </button>
+    
 };
 
 export default HeaderCartButton;
